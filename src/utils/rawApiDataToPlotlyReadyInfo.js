@@ -11,9 +11,9 @@ const rawApiDataToPlotlyReadyInfo = (view, office, data) => {
     'Miami, FL',
     'New Orleans, LA',
   ];
+  console.log(data[0]);
   let rowItem;
   let rowsForTable;
-
   let yearMinMax = []; //variable to set minYear and MaxYear
   for (let yearResults of data[0]['yearResults']) {
     yearMinMax.push(yearResults['fiscal_year']);

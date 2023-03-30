@@ -1,0 +1,34 @@
+.profile-container {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .profile-image {
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-item {
+    margin-bottom: 10px;
+  }
+  
+  .profile-key {
+    font-weight: bold;
+  }
+  
+  .profile-value {
+    margin-left: 5px;
+  }

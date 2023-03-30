@@ -22,6 +22,11 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
+import { Auth0Provider } from '@auth0/auth0-react';
+import Profile from './components/common/Profile';
+
+const domain = 'dev-rqd44aj36pgbm1qq.us.auth0.com';
+const clientId = 'kw6w27Gj4zChMHEfsBrKsnezlkfzs8f0';
 
 const { primary_accent_color } = colors;
 
@@ -30,7 +35,13 @@ ReactDOM.render(
   <Router>
     <Provider store={store}>
       <React.StrictMode>
-        <App />
+        <Auth0Provider
+          domain={domain}
+          clientId={clientId}
+          redirectUri={window.location.origin}
+        >
+          <App />
+        </Auth0Provider>
       </React.StrictMode>
     </Provider>
   </Router>,
@@ -54,6 +65,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <Route path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer
